@@ -1,0 +1,480 @@
+/* ==========================================================================
+   難波市 公式サイト — style.css
+   Design tokens
+   ========================================================================== */
+:root{
+  --bg:            #0a0d12;
+  --bg-panel:       #12161d;
+  --bg-elevated:    #191f28;
+  --bg-elevated-2:  #1f2632;
+
+  --gold:           #c9a227;
+  --gold-bright:    #e0bc4a;
+  --cyan:           #4fd1c5;
+  --crimson:        #b3382c;
+  --crimson-bright: #d1493a;
+
+  --line:           rgba(201,162,39,0.14);
+  --line-soft:      rgba(233,230,220,0.08);
+
+  --text:           #e9e6dc;
+  --text-dim:       #a7adb8;
+  --text-faint:     #626a76;
+
+  --font-display: 'Shippori Mincho', serif;
+  --font-body:    'Noto Sans JP', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  --container: 1120px;
+}
+
+*, *::before, *::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; text-decoration: none; }
+
+img, svg{ display: block; max-width: 100%; }
+
+:focus-visible{
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Background texture (fixed blueprint grid, whole page)
+   ========================================================================== */
+.blueprint-fixed{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 0%, transparent 75%);
+}
+
+header, main, footer{ position: relative; z-index: 1; }
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px clamp(20px, 5vw, 56px);
+  background: rgba(10,13,18,0.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark{
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.brand-mark-sm{ width: 34px; height: 34px; font-size: 15px; }
+
+.brand-text{ display: flex; flex-direction: column; line-height: 1.2; }
+
+.brand-ja{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+}
+
+.brand-en{
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--text-faint);
+}
+
+.site-nav{
+  display: flex;
+  gap: clamp(16px, 3vw, 36px);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+}
+
+.site-nav a{
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover{ color: var(--gold-bright); }
+
+.nav-num{
+  color: var(--gold);
+  font-size: 10px;
+}
+
+@media (max-width: 640px){
+  .site-nav{ display: none; }
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero{
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 120px clamp(20px, 6vw, 56px) 80px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.hero-grid{
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(180deg, transparent, black 30%, black 75%, transparent);
+}
+
+.hero-seal{
+  position: absolute;
+  right: clamp(-120px, 4vw, 40px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(280px, 34vw, 480px);
+  color: var(--gold);
+  opacity: 0.16;
+}
+
+.hero-inner{
+  position: relative;
+  max-width: var(--container);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.eyebrow{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: var(--gold-bright);
+  margin: 0 0 28px;
+}
+
+.eyebrow-line{
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.hero-title{
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(52px, 10vw, 128px);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin: 0 0 32px;
+}
+
+.hero-break{ display: none; }
+
+.hero-lead{
+  font-size: clamp(14px, 1.6vw, 17px);
+  color: var(--text-dim);
+  max-width: 34em;
+  margin: 0 0 64px;
+}
+
+.scroll-cue{
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--text-faint);
+}
+
+.scroll-line{
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(var(--gold), transparent);
+}
+
+/* ==========================================================================
+   Section shell
+   ========================================================================== */
+.section{
+  padding: 120px clamp(20px, 6vw, 56px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.section-inner{
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.doc-number{
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--gold-bright);
+  margin: 0 0 18px;
+  padding-left: 18px;
+  border-left: 2px solid var(--gold);
+}
+
+.doc-number-alt{ border-left-color: var(--cyan); color: var(--cyan); }
+
+.section-title{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(30px, 4.4vw, 48px);
+  line-height: 1.35;
+  margin: 0 0 22px;
+}
+
+.section-title-sub{
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  margin: 0 0 44px;
+}
+
+.section-lead{
+  color: var(--text-dim);
+  max-width: 42em;
+  font-size: 15px;
+  margin: 0 0 56px;
+}
+
+.mobile-break{ display: none; }
+
+/* ==========================================================================
+   Mayor document card
+   ========================================================================== */
+.document-card{
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-panel), var(--bg-elevated));
+  border: 1px solid var(--line-soft);
+  border-top: 3px solid var(--gold);
+  padding: clamp(28px, 5vw, 56px);
+  max-width: 780px;
+}
+
+.document-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px dashed var(--line-soft);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+}
+
+.mayor-quote{
+  margin: 0 0 40px;
+  font-size: clamp(15px, 1.7vw, 17px);
+  line-height: 2.1;
+  color: var(--text);
+  font-style: normal;
+}
+
+.document-sign{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.sign-role{
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+
+/* ==========================================================================
+   Card grids (department members)
+   ========================================================================== */
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 900px){
+  .card-grid{ grid-template-columns: 1fr; }
+}
+
+.member-card{
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border: 1px solid var(--line-soft);
+  padding: 32px 28px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.member-card:hover{
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.member-role-label{
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  margin: 0 0 14px;
+  text-transform: uppercase;
+}
+
+.member-role{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  margin: 0 0 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.member-quote{
+  position: relative;
+  margin: 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--gold);
+  font-size: 14.5px;
+  line-height: 1.95;
+  color: var(--text-dim);
+  min-height: 5.8em;
+}
+
+.member-note{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gold-bright);
+  letter-spacing: 0.04em;
+  margin: 16px 0 0;
+}
+
+.member-card-featured{
+  background: var(--bg-elevated);
+  border-color: var(--line);
+}
+
+.member-card-featured .member-quote{ border-left-color: var(--gold-bright); }
+
+/* Administration variants */
+.admin-card-cyan .member-quote{ border-left-color: var(--cyan); }
+.admin-card-crimson .member-quote{ border-left-color: var(--crimson-bright); }
+
+.admin-card-featured{
+  background: linear-gradient(180deg, var(--bg-elevated-2), var(--bg-panel));
+  border-color: rgba(179,56,44,0.35);
+}
+
+.admin-catch{ max-width: 20em; }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer{
+  padding: 64px clamp(20px, 6vw, 56px) 48px;
+}
+
+.footer-inner{
+  max-width: var(--container);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.footer-brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--text-dim);
+}
+
+.footer-note{
+  font-size: 12.5px;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+.footer-copyright{
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive refinements
+   ========================================================================== */
+@media (min-width: 641px){
+  .hero-break{ display: inline; }
+}
+
+@media (max-width: 560px){
+  .mobile-break{ display: inline; }
+  .hero{ min-height: auto; padding-top: 96px; }
+  .document-head{ flex-direction: column; align-items: flex-start; gap: 6px; }
+  .document-sign{ justify-content: space-between; }
+}
