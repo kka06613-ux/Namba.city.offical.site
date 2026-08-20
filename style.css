@@ -13,6 +13,8 @@
   --cyan:           #4fd1c5;
   --crimson:        #b3382c;
   --crimson-bright: #d1493a;
+  --emerald:        #3fae74;
+  --orange:         #d97e34;
 
   --line:           rgba(201,162,39,0.14);
   --line-soft:      rgba(233,230,220,0.08);
@@ -129,7 +131,9 @@ header, main, footer{ position: relative; z-index: 1; }
 
 .site-nav{
   display: flex;
-  gap: clamp(16px, 3vw, 36px);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: clamp(12px, 2.4vw, 26px);
   font-family: var(--font-mono);
   font-size: 12.5px;
   letter-spacing: 0.03em;
@@ -145,12 +149,14 @@ header, main, footer{ position: relative; z-index: 1; }
 
 .site-nav a:hover{ color: var(--gold-bright); }
 
+.site-nav a.nav-current{ color: var(--gold-bright); }
+
 .nav-num{
   color: var(--gold);
   font-size: 10px;
 }
 
-@media (max-width: 640px){
+@media (max-width: 780px){
   .site-nav{ display: none; }
 }
 
@@ -258,6 +264,20 @@ header, main, footer{ position: relative; z-index: 1; }
   margin: 0 auto;
 }
 
+.back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+  margin: 0 0 40px;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover{ color: var(--gold-bright); }
+
 .doc-number{
   font-family: var(--font-mono);
   font-size: 12px;
@@ -269,6 +289,8 @@ header, main, footer{ position: relative; z-index: 1; }
 }
 
 .doc-number-alt{ border-left-color: var(--cyan); color: var(--cyan); }
+.doc-number-emerald{ border-left-color: var(--emerald); color: var(--emerald); }
+.doc-number-orange{ border-left-color: var(--orange); color: var(--orange); }
 
 .section-title{
   font-family: var(--font-display);
@@ -341,6 +363,75 @@ header, main, footer{ position: relative; z-index: 1; }
   color: var(--text-dim);
   border-top: 1px solid var(--line-soft);
 }
+
+/* ==========================================================================
+   Floor directory (top page)
+   ========================================================================== */
+.directory-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px){
+  .directory-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px){
+  .directory-grid{ grid-template-columns: 1fr; }
+}
+
+.floor-card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-panel);
+  border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--gold);
+  padding: 30px 26px 26px;
+  min-height: 168px;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.floor-card:hover{
+  border-color: var(--gold);
+  background: var(--bg-elevated);
+  transform: translateY(-4px);
+}
+
+.floor-num{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--gold-bright);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.floor-name{
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.floor-desc{
+  font-size: 13px;
+  color: var(--text-faint);
+  line-height: 1.7;
+}
+
+.floor-arrow{
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  font-family: var(--font-mono);
+  color: var(--gold);
+  transition: transform 0.25s ease;
+}
+
+.floor-card:hover .floor-arrow{ transform: translateX(6px); }
 
 /* ==========================================================================
    Mayor document card
@@ -496,6 +587,8 @@ header, main, footer{ position: relative; z-index: 1; }
 /* Administration variants */
 .admin-card-cyan .member-quote{ border-left-color: var(--cyan); }
 .admin-card-crimson .member-quote{ border-left-color: var(--crimson-bright); }
+.admin-card-emerald .member-quote{ border-left-color: var(--emerald); }
+.admin-card-orange .member-quote{ border-left-color: var(--orange); }
 
 .admin-card-featured{
   background: linear-gradient(180deg, var(--bg-elevated-2), var(--bg-panel));
@@ -529,6 +622,21 @@ header, main, footer{ position: relative; z-index: 1; }
   font-size: 15px;
   color: var(--text-dim);
 }
+
+.footer-nav{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 22px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  margin: 6px 0 4px;
+}
+
+.footer-nav a{ transition: color 0.2s ease; }
+.footer-nav a:hover{ color: var(--gold-bright); }
 
 .footer-note{
   font-size: 12.5px;

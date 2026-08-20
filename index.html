@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>難波市 公式サイト｜NAMBA CITY OFFICIAL</title>
-<meta name="description" content="難波市 公式サイト。市長から、難波市開発部、難波市管理部のご紹介。">
+<title>難波市 公式サイト｜難波市 公式サイト</title>
+<meta name="description" content="難波市 公式サイト。難波市の魅力、市長メッセージ、各部門のご紹介。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,9 +13,8 @@
 <body>
 
 <div class="blueprint-fixed" aria-hidden="true"></div>
-
 <header class="site-header">
-  <a href="#top" class="brand">
+  <a href="index.html" class="brand">
     <span class="brand-mark">難</span>
     <span class="brand-text">
       <span class="brand-ja">難波市</span>
@@ -23,10 +22,12 @@
     </span>
   </a>
   <nav class="site-nav">
-    <a href="#charm"><span class="nav-num">GALLERY</span>魅力</a>
-    <a href="#mayor"><span class="nav-num">01</span>市長から</a>
-    <a href="#development"><span class="nav-num">02</span>難波市職員紹介</a>
-    <a href="#administration"><span class="nav-num">03</span>難波市管理部紹介</a>
+    <a href="charm.html">魅力</a>
+    <a href="mayor.html">市長</a>
+    <a href="development.html">開発部</a>
+    <a href="administration.html">管理部</a>
+    <a href="police.html">警察</a>
+    <a href="fire.html">消防</a>
   </nav>
 </header>
 
@@ -50,207 +51,64 @@
         。<br>
         難波市公式ホームページ
       </p>
-      <a href="#charm" class="scroll-cue">
+      <a href="#directory" class="scroll-cue">
         <span>SCROLL</span>
         <span class="scroll-line"></span>
       </a>
     </div>
   </section>
 
-  <!-- ===================== CITY CHARM / GALLERY ===================== -->
-  <section class="section charm-section" id="charm">
+  <!-- ===================== FLOOR DIRECTORY ===================== -->
+  <section class="section directory-section" id="directory">
     <div class="section-inner">
-      <p class="doc-number doc-number-alt">CITY GALLERY</p>
-      <h2 class="section-title">難波市の魅力</h2>
-      <p class="section-lead">街並み、暮らし、そしてそこに集う人々。難波市の"今"を写真でご紹介します。</p>
+      <p class="doc-number doc-number-alt">FLOOR GUIDE</p>
+      <h2 class="section-title">フロア案内</h2>
+      <p class="section-lead">難波市役所 総合案内板。ご覧になりたいフロアをお選びください。</p>
 
-      <div class="gallery-grid">
+      <div class="directory-grid">
 
-        <figure class="gallery-item">
-          <img src="miryoku-01.jpg" alt="難波市の街並み1" loading="lazy">
-          <figcaption>難波市中心部の街並み</figcaption>
-        </figure>
+        <a href="charm.html" class="floor-card">
+          <span class="floor-num">1F</span>
+          <span class="floor-name">難波市の魅力</span>
+          <span class="floor-desc">街並みや暮らしの写真ギャラリー</span>
+          <span class="floor-arrow">→</span>
+        </a>
 
-        <figure class="gallery-item">
-          <img src="miryoku-02.jpg" alt="難波市の街並み2" loading="lazy">
-          <figcaption>夜の難波市</figcaption>
-        </figure>
+        <a href="mayor.html" class="floor-card">
+          <span class="floor-num">2F</span>
+          <span class="floor-name">市長室</span>
+          <span class="floor-desc">難波市長からのメッセージ</span>
+          <span class="floor-arrow">→</span>
+        </a>
 
-        <figure class="gallery-item">
-          <img src="miryoku-03.jpg" alt="難波市の街並み3" loading="lazy">
-          <figcaption>海沿いエリア</figcaption>
-        </figure>
+        <a href="development.html" class="floor-card">
+          <span class="floor-num">3F</span>
+          <span class="floor-name">難波市開発部</span>
+          <span class="floor-desc">マップ設計・建築を担う部署</span>
+          <span class="floor-arrow">→</span>
+        </a>
 
-        <figure class="gallery-item">
-          <img src="miryoku-04.jpg" alt="難波市の街並み4" loading="lazy">
-          <figcaption>住宅区画</figcaption>
-        </figure>
+        <a href="administration.html" class="floor-card">
+          <span class="floor-num">4F</span>
+          <span class="floor-name">難波市管理部</span>
+          <span class="floor-desc">RPの秩序と公正を支える部署</span>
+          <span class="floor-arrow">→</span>
+        </a>
 
-        <figure class="gallery-item">
-          <img src="miryoku-05.jpg" alt="難波市の街並み5" loading="lazy">
-          <figcaption>市民イベントの様子</figcaption>
-        </figure>
+        <a href="police.html" class="floor-card">
+          <span class="floor-num">5F</span>
+          <span class="floor-name">難波市警察</span>
+          <span class="floor-desc">市内の治安を守る部署</span>
+          <span class="floor-arrow">→</span>
+        </a>
 
-        <figure class="gallery-item">
-          <img src="miryoku-06.jpg" alt="難波市の街並み6" loading="lazy">
-          <figcaption>開発が進むエリア</figcaption>
-        </figure>
+        <a href="fire.html" class="floor-card">
+          <span class="floor-num">6F</span>
+          <span class="floor-name">難波市消防</span>
+          <span class="floor-desc">市民の安全を守る部署</span>
+          <span class="floor-arrow">→</span>
+        </a>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== MAYOR MESSAGE ===================== -->
-  <section class="section mayor-section" id="mayor">
-    <div class="section-inner">
-      <p class="doc-number">公文書 第01号　市長メッセージ</p>
-      <h2 class="section-title">難波市の市長から。</h2>
-
-      <div class="document-card">
-        <div class="document-head">
-          <span class="document-head-label">難波市役所　市長室</span>
-          <span class="document-head-date">NAMBA CITY HALL</span>
-        </div>
-
-        <blockquote class="mayor-quote">
-          かぴばらさんおねがい。<br><br>
-          本市は、市民一人ひとりの情熱と協力によって築かれてまいりました。私たちが目指すのは、単なる仮想の街ではなく、誰もが誇りを持って「ただいま」と言える確かな居場所です。<br><br>
-          伝統と革新を両輪に、これからも難波市は前進を続けます。市民の皆様と共に、この街の未来を創ってまいりましょう。「例」
-        </blockquote>
-
-        <div class="document-sign">
-          <span class="sign-role">難波市長かぴばら。</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== DEVELOPMENT DEPARTMENT ===================== -->
-  <section class="section dept-section" id="development">
-    <div class="section-inner">
-      <p class="doc-number">公文書 第02号　組織紹介</p>
-      <h2 class="section-title">難波市を、創る</h2>
-      <p class="section-lead">「難波市開発部」</p>
-
-      <div class="card-grid dept-grid">
-
-        <article class="member-card">
-          <p class="member-role-label">Development Division</p>
-          <h3 class="member-role">難波市開発部長</h3>
-          <blockquote class="member-quote">
-           例・難波市開発部長「誰かの名前」です。現在難波市は開発段階ですがより早く皆様のもとにリアルで最高なRPをお届けできるよう日々努力しています。
-            皆様が紡ぐこの街の歴史を、開発部はハード面から全力でサポートいたします。これからも共になんば市を発展させていきましょう！
-          </blockquote>
-          <p class="member-note">難波市開発部長 誰かの名前</p>
-        </article>
-
-        <article class="member-card member-card-featured">
-          <p class="member-role-label">Chief Engineer</p>
-          <h3 class="member-role">難波市開発部主任技師</h3>
-          <blockquote class="member-quote">
-          例・難波市開発部主任技師「」です。部長からも記入されている通り、現在難波市は開発段階となっております。難波市はほかのRPゲームよりさらにリアル・楽しいRPゲームを
-            作ろう！と考案され開発が進んでいます。まだ開発初期ですが皆様の感動を最大限引き出せるよう、努力していきます。
-          </blockquote>
-          <p class="member-note">難波市開発部主任技師 誰かの名前</p>
-        </article>
-
-             <article class="member-card">
-          <p class="member-role-label">Development enginner</p>
-          <h3 class="member-role">難波市開発部職員</h3>
-          <blockquote class="member-quote">
-           例・難波市開発部職員の「」です。部長・主任技師の書いてある通りに現在難波市は開発段階です。皆様のプレイ体験を忘れられないような感動・衝撃をお届け
-            できるよう頑張っていきます。
-          </blockquote>
-          <p class="member-note">難波市開発部職員 誰かの名前</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== ADMINISTRATION DEPARTMENT ===================== -->
-  <section class="section admin-section" id="administration">
-    <div class="section-inner">
-      <p class="doc-number doc-number-alt">公文書 第03号　組織紹介</p>
-      <h2 class="section-title admin-catch">難波市のRP（ロールプレイ）を<br class="mobile-break">基礎から支える。</h2>
-      <p class="section-title-sub">難波市管理部</p>
-      <p class="section-lead">難波市警察と協力し、多数の問題を解決していく。</p>
-
-      <div class="card-grid admin-grid">
-
-        <article class="member-card admin-card admin-card-cyan">
-          <p class="member-role-label">Security Section ─ Moderator統括</p>
-          <h3 class="member-role">難波市管理部保安課長</h3>
-          <blockquote class="member-quote">
-            例・難波市管理部保安課長を務めさせてもらっています「」です。難波市警察と協力し警察では対応しきれない問題等を解決していく課です。
-            皆様が安心してＲＰを楽しんでもらうよう日々努力しています。
-          </blockquote>
-           <p class="member-note">難波市管理部保安課長 誰かの名前</p>
-        </article>
-
-        <article class="member-card admin-card admin-card-gold">
-          <p class="member-role-label">Audit Section ─ Admin統括</p>
-          <h3 class="member-role">難波市管理部監査課長</h3>
-          <blockquote class="member-quote">
-          　例・難波市管理部監査課長「」です。保安課で対応が難しいより高度な問題を解決していく課です。
-            難波市を楽しんでいる皆様方に不快な思いをさせないよう頑張ります。
-          </blockquote>
-          <p class="member-note">難波市管理部監査課長 誰かの名前</p>
-        </article>
-
-        <article class="member-card admin-card admin-card-crimson admin-card-featured">
-          <p class="member-role-label">General Control ─ Hard Admin・最高権限</p>
-          <h3 class="member-role">難波市管理部統括管理課長</h3>
-          <blockquote class="member-quote">
-           　例・難波市管理部統括管理課長「」です。
-            当課は、皆様が自由に活動できるよう、街の『基礎（システム）』を維持・管理するのが仕事です。
-            現場のトラブルは保安課・監査課へ。市民登録や土地、インフラに関する行政手続きは、いつでも当課へご相談ください。
-          </blockquote>
-            <p class="member-note">難波市管理部統括管理課長 誰かの名前</p>
-        </article>
-
-         </div>
-    </div>
-  </section>
-    <!-- ===================== Namba police DEPARTMENT ===================== -->
-  <section class="section dept-section" id="development">
-    <div class="section-inner">
-      <p class="doc-number">公文書 第04号　組織紹介</p>
-      <h2 class="section-title">難波市を、創る</h2>
-      <p class="section-lead">「難波市開発部」</p>
-
-      <div class="card-grid dept-grid">
-
-        <article class="member-card">
-          <p class="member-role-label">Development Division</p>
-          <h3 class="member-role">難波市開発部長</h3>
-          <blockquote class="member-quote">
-           例・難波市開発部長「誰かの名前」です。現在難波市は開発段階ですがより早く皆様のもとにリアルで最高なRPをお届けできるよう日々努力しています。
-            皆様が紡ぐこの街の歴史を、開発部はハード面から全力でサポートいたします。これからも共になんば市を発展させていきましょう！
-          </blockquote>
-          <p class="member-note">難波市開発部長 誰かの名前</p>
-        </article>
-
-        <article class="member-card member-card-featured">
-          <p class="member-role-label">Chief Engineer</p>
-          <h3 class="member-role">難波市開発部主任技師</h3>
-          <blockquote class="member-quote">
-          例・難波市開発部主任技師「」です。部長からも記入されている通り、現在難波市は開発段階となっております。難波市はほかのRPゲームよりさらにリアル・楽しいRPゲームを
-            作ろう！と考案され開発が進んでいます。まだ開発初期ですが皆様の感動を最大限引き出せるよう、努力していきます。
-          </blockquote>
-          <p class="member-note">難波市開発部主任技師 誰かの名前</p>
-        </article>
-
-             <article class="member-card">
-          <p class="member-role-label">Development enginner</p>
-          <h3 class="member-role">難波市開発部職員</h3>
-          <blockquote class="member-quote">
-           例・難波市開発部職員の「」です。部長・主任技師の書いてある通りに現在難波市は開発段階です。皆様のプレイ体験を忘れられないような感動・衝撃をお届け
-            できるよう頑張っていきます。
-          </blockquote>
-          <p class="member-note">難波市開発部職員 誰かの名前</p>
-        </article>
-        
       </div>
     </div>
   </section>
@@ -263,6 +121,15 @@
       <span class="brand-mark brand-mark-sm">難</span>
       <span class="brand-ja">難波市</span>
     </div>
+    <nav class="footer-nav">
+      <a href="index.html">トップ</a>
+      <a href="charm.html">魅力</a>
+      <a href="mayor.html">市長</a>
+      <a href="development.html">開発部</a>
+      <a href="administration.html">管理部</a>
+      <a href="police.html">警察</a>
+      <a href="fire.html">消防</a>
+    </nav>
     <p class="footer-note">本サイトは Roblox コミュニティ「難波市」の公式サイトです。</p>
     <p class="footer-copyright">© NAMBA CITY. All Rights Reserved.</p>
   </div>
