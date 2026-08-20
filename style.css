@@ -665,3 +665,98 @@ header, main, footer{ position: relative; z-index: 1; }
   .document-head{ flex-direction: column; align-items: flex-start; gap: 6px; }
   .document-sign{ justify-content: space-between; }
 }
+
+
+/* ==========================================================================
+   Recruitment page
+   ========================================================================== */
+.recruit-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 860px){
+  .recruit-grid{ grid-template-columns: 1fr; }
+}
+
+.recruit-card{
+  background: linear-gradient(180deg, var(--bg-panel), var(--bg-elevated));
+  border: 1px solid var(--line-soft);
+  border-top: 3px solid var(--gold);
+  padding: clamp(26px, 4vw, 40px);
+}
+
+.recruit-card.recruit-card-cyan{ border-top-color: var(--cyan); }
+
+.recruit-card h3{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 21px;
+  margin: 0 0 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--line-soft);
+}
+
+.recruit-label{
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gold-bright);
+  margin: 26px 0 12px;
+}
+
+.recruit-card.recruit-card-cyan .recruit-label{ color: var(--cyan); }
+
+.recruit-label:first-of-type{ margin-top: 0; }
+
+.recruit-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recruit-list li{
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--text-dim);
+}
+
+.recruit-list li::before{
+  content: "・";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.recruit-card.recruit-card-cyan .recruit-list li::before{ color: var(--cyan); }
+
+.recruit-apply{
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--line-soft);
+  font-size: 13.5px;
+  color: var(--text-dim);
+  line-height: 1.9;
+}
+
+.recruit-apply strong{
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.floor-card-recruit{
+  border-left-color: var(--cyan);
+  background: linear-gradient(180deg, var(--bg-elevated-2), var(--bg-panel));
+}
+
+.floor-card-recruit .floor-num{ color: var(--cyan); }
+.floor-card-recruit .floor-arrow{ color: var(--cyan); }
