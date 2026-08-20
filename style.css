@@ -760,3 +760,27 @@ header, main, footer{ position: relative; z-index: 1; }
 
 .floor-card-recruit .floor-num{ color: var(--cyan); }
 .floor-card-recruit .floor-arrow{ color: var(--cyan); }
+
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 50px 0 30px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.links a:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
